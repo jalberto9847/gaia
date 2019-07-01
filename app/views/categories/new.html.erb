@@ -1,0 +1,15 @@
+<%= form_for @category, url: {action: "create"} do |form| %>
+  <p>
+  <%= form.label :name %><br>
+  <%= form.text_field :name %>
+  </p>
+
+  <p>
+  <%= form.label :category_type %><br>
+  <%= form.select :category_type, @types %>
+  </p>
+
+  <p>
+  <%= form.submit %>
+  </p>
+<% end %>
