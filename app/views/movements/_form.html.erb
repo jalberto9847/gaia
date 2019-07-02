@@ -1,0 +1,17 @@
+  <p>
+<%=form_for @movement do |form|%>
+    <%= form.label :category_id %>
+    <%= form.select :category_id, options_from_collection_for_select(Category.all, :id, :name, @movement.category_id), include_blank: true%>
+  </p>
+  <p>
+    <%= form.label :description %>
+    <%= form.text_field :description%>
+  </p>
+  <p>
+    <%= form.label :value %>
+    <%= form.number_field :value%>
+  </p>
+
+  <p><%=form.submit%></p>
+
+<%end%>
