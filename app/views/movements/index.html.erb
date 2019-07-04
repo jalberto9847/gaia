@@ -1,0 +1,15 @@
+<h1> Movements </h1>
+
+<ol>
+  <% @movements.each do |movement| %>
+    <li>
+      <ul>
+        <li><label>Category:</label><%= movement.category.name.capitalize%></li>
+        <li><label>Value:</label><%= movement.value%></li>
+        <li><label>Description:</label><%= movement.description%></li>
+        <li><%=link_to 'Edit', edit_movement_path(movement)%></li>
+        <li><%=link_to 'Delete', movement_path(movement), method: :delete%></li>
+      </ul>
+    </li>
+  <%end%>
+</ol>
